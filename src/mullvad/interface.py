@@ -104,7 +104,7 @@ def disconnect() -> None:
 
 
 def connect() -> None:
-    _ = subprocess.run(["mullbad", "connect"])
+    _ = subprocess.run(["mullvad", "connect"])
 
 
 def connect_to_random_server():
