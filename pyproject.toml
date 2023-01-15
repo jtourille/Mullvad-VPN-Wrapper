@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "mullvad-vpn-wrapper"
+version = "0.1.0"
+description = ""
+authors = ["Julien Tourille <julien.tourille@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "mullvad", from = "src"},
+]
+
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.12.0"
+isort = "^5.11.4"
+pre-commit = "^2.21.0"
+flake8 = "^6.0.0"
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
